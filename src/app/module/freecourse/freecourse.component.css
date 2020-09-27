@@ -1,0 +1,8 @@
+.navpanel .navbar{
+    font-size: larger;
+    /* color: #66615B; */
+}
+
+.navpanel a{
+    cursor: pointer;
+}

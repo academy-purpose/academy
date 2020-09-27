@@ -1,0 +1,31 @@
+<!-- <div class="row" *ngIf="response">
+<div *ngFor="let data of response.python" class="card col-md-3 col-sm-3 col-lg-3 col-xs-12" style="width: 15rem;height:13rem">
+    <div class="card-body" style="padding: 0px;">
+        <iframe #URL width="350" height="300" src="{{data.src}}" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+    </div>
+  </div>
+</div> -->
+<!-- <iframe width="350" height="300" src="https://www.youtube.com/embed/eiGdsH1g20k" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
+
+    <!-- <iframe width="956" height="538" src="https://www.youtube.com/embed/V2gVOIyUqVs?list=PLTjRvDozrdlydy3uUBWZlLUTNpJSGGCEm" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="956" height="538" src="https://www.youtube.com/embed/_uQrJ0TkZlc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+
+<div class="navpanel" *ngIf="listData">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" (click)="changeNavigation('')">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li *ngFor="let data of listData" class="nav-item" [ngClass]="data.link == activeLink ? 'active':'' ">
+          <a class="nav-link" (click)="changeNavigation(data)">{{data.header}} <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

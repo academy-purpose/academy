@@ -1,0 +1,95 @@
+<!-- <p routerLink="/admin">admin-layout works!</p>
+<p routerLink="/dashboard">das</p>
+<p routerLink="/userprofile">profile</p>
+<p routerLink="/qaforum">qaforum</p>
+<p routerLink="/userlist">user list</p> -->
+
+<div *ngIf="!response" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="response" class="wrapper">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+            <div class="logo-image-small">
+              <img src="assets/img/study.jpg">
+            </div>
+          </a>
+          <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+            Academy
+          </a>
+        </div>
+          <ul class="nav">
+              <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}" [ngStyle]="{'display' : menuItem.display == true ? '' : 'none'} ">
+                  <a routerLink="{{menuItem.path}}">
+                      <i class="{{menuItem.icon}} sidebaricon" aria-hidden="true"></i>
+                      <p>{{menuItem.title}}</p>
+                  </a>
+              </li>
+          </ul>
+      </div>
+    </div>
+  
+    <div class="main-panel">
+
+      <!-- <navbar-cmp></navbar-cmp> -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search...">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <i class="fa fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <!-- <i class="fa fa-bars nav-link" aria-hidden="true"></i> -->
+              <a class="fa fa-bars nav-link" href="#"></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fa fa-bell-o" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <i class="fa fa-bell-o" aria-hidden="true"></i> -->
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-cog nav-link" href="#" tabindex="-1" aria-disabled="true"></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- navbar-cmp -->
+      <div class="content">
+          <router-outlet></router-outlet>
+      </div>
+      <!-- <footer-cmp></footer-cmp> -->
+  </div>
+  
+  </div>
+  
+<!-- <router-outlet></router-outlet> -->
